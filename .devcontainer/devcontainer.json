@@ -1,0 +1,15 @@
+{
+    "name": "php-dev-container",
+    "image": "composer:latest",
+    "settings": {
+        "[php]": {
+            "editor.tabSize": 4,
+        },
+        "search.exclude": {
+            "**/vendor/*/**": true
+        }
+    },
+    "extensions": [
+        "neilbrayfield.php-docblocker",
+    ]
+}
