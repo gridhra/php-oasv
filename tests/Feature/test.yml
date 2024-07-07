@@ -1,0 +1,82 @@
+openapi: 3.0.2
+info:
+  description: OasValidatorInterfaceTestのためのyaml
+  version: 1.0.0
+  title: for test
+tags:
+  - name: healthcheck
+    description: healthcheck
+paths:
+  /v1/healthcheck:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - healthcheck
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    required:
+                      - status
+                    properties:
+                      status:
+                        type: string
+                required:
+                  - data
+              examples:
+                example-1:
+                  value:
+                    data:
+                      status: OK
+      operationId: get-v1-healthcheck
+      description: GETのテスト用
+    post:
+      summary: healthcheck
+      operationId: post-v1-healthcheck
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      status:
+                        type: string
+              examples:
+                example-1:
+                  value:
+                    data:
+                      status: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  required:
+                    - content
+                  properties:
+                    content:
+                      type: string
+              required:
+                - data
+            examples:
+              example-1:
+                value:
+                  data:
+                    content: ごきげん
+      tags:
+        - healthcheck
+      description: POSTのテスト用
